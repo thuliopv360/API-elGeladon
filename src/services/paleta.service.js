@@ -35,3 +35,22 @@ export const findAllPaletasService = () => {
 export const findByIdPaletaService = (parametroId) => {
     return paletas.find((paleta) => paleta.id === parametroId);
 };
+
+export const createPaletaService = (newPaleta) => {
+    const newId = paletas.length + 1;
+    newPaleta.id = newId;
+    paletas.push(newPaleta);
+    return newPaleta;
+};
+
+export const updatePaletaService = (id, paletaEdited) => {
+    paletaEdited['id'] = id;
+    const paletaIndex = paletas.findIndex((paleta) => paleta.id == id);
+    paletas[paletaIndex] = paletaEdited;
+    return paletaEdited;
+};
+
+export const deletePaletaService = (id) => {
+    const paletaIndex = paletas.findIndex((paleta) => paleta.id == id);
+    return paletas.splice(paletaIndex, 1);
+};

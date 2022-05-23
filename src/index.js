@@ -9,7 +9,6 @@ app.use(express.json());
 app.use(cors());
 app.use('/paletas', route);
 
-
 //get all = pega tudo
 // app.get('/paletas/todas-paletas', (req, res) => {
 //     res.send(paletas);
