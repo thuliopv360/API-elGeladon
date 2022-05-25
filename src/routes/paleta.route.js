@@ -7,9 +7,10 @@ import {
     updatePaletaController,
     deletePaletaController,
 } from '../controller/paleta.controller.js';
+import { validId, validObjectBody } from '../middlewares/paleta.middleware.js'
 
 route.get('/all-paletas', findAllPaletasController);
-route.get('/one-paleta/:id', findByIdPaletaController);
-route.post('/create-paleta', createPaletaController);
-route.put('/update-paleta/:id', updatePaletaController);
-route.delete('/delete-paleta/:id', deletePaletaController);
+route.get('/one-paleta/:id', validId, findByIdPaletaController);
+route.post('/create-paleta', validObjectBody, createPaletaController);
+route.put('/update-paleta/:id', validId, validObjectBody, updatePaletaController);
+route.delete('/delete-paleta/:id', validId, deletePaletaController);
