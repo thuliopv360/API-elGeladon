@@ -8,8 +8,8 @@ import {
     deletePaletaController,
 } from '../controller/paleta.controller.js';
 
-route.get('/todas-paletas', findAllPaletasController);
-route.get('/paleta/:id', findByIdPaletaController);
-route.post('/create', createPaletaController);
-route.put('/update/:id', updatePaletaController);
-route.delete('/delete/:id', deletePaletaController);
+route.get('/all-paletas', findAllPaletasController);
+route.get('/one-paleta/:id', findByIdPaletaController);
+route.post('/create-paleta', createPaletaController);
+route.put('/update-paleta/:id', updatePaletaController);
+route.delete('/delete-paleta/:id', deletePaletaController);
