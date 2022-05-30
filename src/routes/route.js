@@ -12,7 +12,16 @@ import {
     createManyItemsCarrinhoController,
     deleteAllItemsCarrinhoController,
 } from '../controller/carrinho.controller.js';
-import { validId, validObjectBody, validObjectBodyCarrinho } from '../middlewares/paleta.middleware.js';
+import {
+    validId,
+    validObjectBody,
+    validObjectBodyCarrinho,
+} from '../middlewares/paleta.middleware.js';
+// import swaggerUi from 'swagger-ui-express';
+// import swaggerDocument from '../../swagger.json';
+
+// route.use('/api-docs', swaggerUi.serve);
+// route.get('/api-docs', swaggerUi.setup(swaggerDocument));
 
 route.get('/all-paletas', findAllPaletasController);
 route.get('/one-paleta/:id', validId, findByIdPaletaController);
@@ -25,8 +34,10 @@ route.put(
 );
 route.delete('/delete-paleta/:id', validId, deletePaletaController);
 
-
-
 route.get('/all-carrinho', findAllCarrinhoController);
-route.post('/create-carrinho', validObjectBodyCarrinho, createManyItemsCarrinhoController);
+route.post(
+    '/create-carrinho',
+    validObjectBodyCarrinho,
+    createManyItemsCarrinhoController,
+);
 route.delete('/finish-carrinho', deleteAllItemsCarrinhoController);
