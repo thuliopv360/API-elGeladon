@@ -1,6 +1,6 @@
 import express from 'express';
 import cors from 'cors';
-import { route } from './routes/paleta.route.js';
+import { route } from './routes/route.js';
 import { connectToDatabase } from './database/database.js'
 
 const port = 3000;
